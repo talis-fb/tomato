@@ -1,15 +1,25 @@
-import { Default, prepareInitialState } from "@tomato/components";
+import { prepareInitialState } from "@tomato/components";
 
-import { List } from "./views";
+import { List, Login } from "./views";
+
+import { Main } from './layouts';
 
 const routes = [
   {
     moduleId: "sample",
-    admin: false,
-    authenticated: true,
+    // admin: false,
+    // authenticated: true,
     path: "/",
-    layout: Default,
+    layout: Main, 
     view: List,
+  },
+  {
+    moduleId: "login",
+    // admin: false,
+    // authenticated: true,
+    path: "/login",
+    layout: Main, 
+    view: Login,
   },
 ];
 
