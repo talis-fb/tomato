@@ -4,7 +4,7 @@
 // import { Card, crud, Flex, Image, Spinner } from "@tomato/components";
 import { Card } from "@tomato/components";
 
-export const List = () => {
+export const Home = () => {
     return (
         <div>
             <Card> Opa </Card>

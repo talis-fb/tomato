@@ -1,10 +1,10 @@
-import { useState } from 'React'
+import { useState } from 'react'
 
 import Account from './Account'
 import Orders from './Orders'
 import Wishlist from './Wishlist'
 
-export default () => {
+export const UserAccount = () => {
     const [page, setPage] = useState('Account');
 
     const Pages = { Account,Orders,Wishlist };
