@@ -1,22 +1,29 @@
 // import { useEffect } from "react";
 // import { useSelector } from "react-redux";
+import { getStates  } from '@tomato/components'
+import { useSelector } from 'react-redux'
 
 // import { Card, crud, Flex, Image, Spinner } from "@tomato/components";
 // import { Card } from "@tomato/components";
 // import Logo from '../assets/Logo.jpg'
 import styled from '@emotion/styled'
 
-const Button = styled.button({
-    border: 'none',
-    padding: '10px',
-    minHeight: '50px',
-    backgroundColor: '#555556',
-    color: '#ffffff',
-    borderRadius: '5px',
-    boxShadow: '1px solid black'
-})
+import {  ButtonOutline, Button } from '../styles'
+
+// const Button = styled.button({
+//     border: 'none',
+//     padding: '10px',
+//     minHeight: '50px',
+//     backgroundColor: '#555556',
+//     color: '#ffffff',
+//     borderRadius: '5px',
+//     boxShadow: '1px solid black'
+// })
 
 export const Home = () => {
+    // const dispatch = useSelector()
+    // console.log(useSelector( state => state["store"] ))
+    console.log(getStates())
     return (
         <>
             <section sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>

@@ -3,22 +3,24 @@ import { Card } from "@tomato/components";
 
 import { ProductView } from './ProductView';
 
+import { ProductCard } from '../styles'
 
-const Wine = ({ name, price, click }) => {
-    return(
-        <Card sx={{width: '200px', height: '300px', backgroundColor: 'grey' }}>
-            <img src="" alt=""   />
-            <div onClick={click} >{name}</div>
-            <div>R$ {price}</div>
-        </Card>
-    )
-}
+
+// const Wine = ({ name, price, click }) => {
+//     return(
+//         <Card sx={{width: '200px', height: '300px', backgroundColor: 'grey' }}>
+//             <img src="" alt=""   />
+//             <div onClick={click} >{name}</div>
+//             <div>R$ {price}</div>
+//         </Card>
+//     )
+// }
 
 const style = {
     width: '100%',
     display: 'flex',
     padding: '10px',
-    gap: '5px'
+    gap: '20px'
 }
 
 export const Shop = () => {
@@ -29,7 +31,7 @@ export const Shop = () => {
     return (
         <div sx={style}>
             { seeing.name ? <ProductView name={seeing.name} price={seeing.price} description={seeing.description} /> : '' }
-            {exemplo.map( i => <Wine key={i.name} click={ () => setSeeing(i) } name={i.name} price={i.price} />)}
+            {exemplo.map( i => <ProductCard key={i.name} click={ () => setSeeing(i) } name={i.name} price={i.price} />)}
         </div>
     )
 };

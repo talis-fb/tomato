@@ -45,8 +45,7 @@ const AvalicaoScreen = (props) => {
 
 
 
-export default function Account() {  
-    const [ avalicaoIsOn, setAvalicao ] = useState(false)
+export default function Wishlist() {  
 
     return (
         <div sx={{ width: '90%' }}>
@@ -80,10 +79,8 @@ export default function Account() {
             </Table>
 
             <div sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', gap: '10px' }}>
-                Nova Avaliação <button onClick={() => setAvalicao(!avalicaoIsOn) } sx={{ width: '40px', height: '40px', padding: '10px' }}>+</button>
+                Nova Avaliação <button sx={{ width: '40px', height: '40px', padding: '10px' }}>+</button>
             </div>
-
-            { avalicaoIsOn ? <AvalicaoScreen /> : '' }
         </div>
     )
 }

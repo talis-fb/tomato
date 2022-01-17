@@ -1,5 +1,7 @@
 // import { Icon } from '@tomato/components'
+import { useState } from 'react'
 import Logo from '../assets/Logo.jpg'
+import { Login } from '../views/Login'
 
 const styles ={
     flex: {
@@ -16,7 +18,11 @@ const styles ={
     }
 }
 
+
+
 export const Main = ({ children, ...props }) => {
+    const [ loginOn,setLoginOn ] = useState(0);
+
     return (
         <div sx={{
             position: 'relative',
@@ -29,7 +35,7 @@ export const Main = ({ children, ...props }) => {
                 sx={{ 
                     ...styles.flex,
                     justifyContent: 'space-between',
-                    position: 'relative',
+                    // position: 'relative',
                     width: '100%',
                     height: '90px',
                     padding: '10px',
@@ -53,7 +59,7 @@ export const Main = ({ children, ...props }) => {
                 </div>
 
                 <div sx={{ ...styles.flex, ...styles.imgs}}>
-                    <a href="/login"> 
+                    <a onClick={ () => setLoginOn( 1 ) }> 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-square" viewBox="0 0 16 16"> <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/> <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/> </svg>
                         Signup/Login
                     </a>
@@ -61,6 +67,7 @@ export const Main = ({ children, ...props }) => {
             </header>
 
             <main sx={{ width:'100%', mx:'auto' }}>
+                { loginOn ? <Login closeWindow={ () => setLoginOn(0) } /> : '' }
                 {children}
             </main>
         </div>
