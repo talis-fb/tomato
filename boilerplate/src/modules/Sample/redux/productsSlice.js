@@ -16,7 +16,18 @@ const productsSlice = createSlice({
             })
         },
         addProduct: ( state, payload ) => {
-            state.products[payload.id].quant++;
+            if(state.products[payload.id]){
+                state.products[payload.id].quant++;
+                return;
+            }
+
+            const { name, price, description } = payload;
+            state.products.push({
+                name,
+                price,
+                description,
+                quant: 1
+            })
         }
     }
 })

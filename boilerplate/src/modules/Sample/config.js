@@ -37,5 +37,6 @@ export const sample = {
   icon: "Email",
   name: "Sample",
   routes,
-    initialState: prepareInitialState({ produtos: [{name: 'aa'}] }),
+    initialState: prepareInitialState({ produtos: ['name'] }),
+    // initialState: prepareInitialState({ produtos: [{name: 'aa'}] }),
 };

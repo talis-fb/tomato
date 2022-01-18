@@ -1,5 +1,8 @@
 import styled from '@emotion/react'
 
+// import { useDispatch } from 'react-redux'
+// import { addProduct } from '../redux'
+
 export const ProductView = ({ name, price, description }) => {
     const Div = styled.div({
         width: '100%',
@@ -8,6 +11,11 @@ export const ProductView = ({ name, price, description }) => {
             display: 'flex'
         }
     })
+
+    // const dispatch = useDispatch()
+    // const AddProductOnBag = () => {
+        // dispatch(addProduct({ name, price, description }))
+    // }
     return (
         <div>
             <div>
