@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { getStates  } from '@tomato/components'
-import { useSelector } from 'react-redux'
+import MODULE from '../../Sample'
 
 // import { Card, crud, Flex, Image, Spinner } from "@tomato/components";
 // import { Card } from "@tomato/components";
@@ -22,8 +22,9 @@ import {  ButtonOutline, Button } from '../styles'
 
 export const Home = () => {
     // const dispatch = useSelector()
-    // console.log(useSelector( state => state["store"] ))
-    console.log(getStates())
+    console.log(useSelector( state => state["products"] ))
+    console.log(useSelector( state => state ))
+    // console.log(getStates(MODULE))
     return (
         <>
             <section sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>

@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 
-import { Flex, Card, Text, Image  } from '@tomato/components'
+import { Flex, Card, Text, Image, ACTIONS  } from '@tomato/components'
 import { Link } from 'react-router-dom'
+
+import { useDispatch, useSelector } from 'react-redux'
 
 const colors = {
     red: '#b10242',
@@ -32,13 +34,23 @@ const ButtonOutline = styled.button({
     boxShadow: '1px solid black'
 })
 
-const ProductCard = ({ name, price }) => {
+const ProductCard = ({ name, price, id }) => {
     const Div =  styled.div({
         display: 'flex',
         flexWrap: 'wrap',
     })
 
     const product = {}
+
+    const dispatch = useDispatch()
+
+    const store = useSelector( state => state["products"] )
+
+    const addToCart = () => {
+        const newProd = { ...store }
+        newProd[name] = { price }
+        dispatch(ACTIONS.products.changeState({ ...newProd }))
+    }
 
     return (
         <Div>
@@ -87,7 +99,7 @@ const ProductCard = ({ name, price }) => {
                 sx={{ cursor: "pointer", width: "100%" }}
                 color="#ffffff"
                 onClick={() => {
-                    // addToCart(product.id);
+                    addToCart(product.id);
                 }}
                 variant="disabled"
             >

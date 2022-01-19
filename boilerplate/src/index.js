@@ -8,7 +8,9 @@ import App from "./App";
 import MODULES from "./modules";
 
 const modulesState = getStates(MODULES);
-const manualStates = { produtos: [{name: 'aa'}] };
+
+const manualStates = { products: {} };
+
 const state = { ...modulesState, ...manualStates };
 const STORE = initStore({ state });
 
