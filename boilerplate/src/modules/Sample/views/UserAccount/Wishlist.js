@@ -1,5 +1,6 @@
 import { useState } from 'react'
-
+import { useSelector, useDispatch } from "react-redux";
+import { ACTIONS } from '@tomato/components'
 import styled from '@emotion/styled'
 import Logo from '../../assets/Logo.jpg'
 
@@ -47,6 +48,10 @@ const AvalicaoScreen = (props) => {
 
 export default function Wishlist() {  
 
+    // const dispatch = useDispatch()
+
+    const ITENS = useSelector(state => state['products'])
+
     return (
         <div sx={{ width: '90%' }}>
             <Table>
@@ -75,6 +80,11 @@ export default function Wishlist() {
                         <td>Região</td>
                         <td>Nota</td>
                     </tr>
+                    {Object.values(ITENS).map( (i, ind) => (
+                        <tr key={ind}>
+                            <td>{i.name}</td>
+                        </tr>
+                    ) )}
                 </tbody>
             </Table>
 

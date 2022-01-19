@@ -1,6 +1,6 @@
 import { prepareInitialState } from "@tomato/components";
 
-import { Home, Login, Shop, UserAccount } from "./views";
+import { Home, Login, Shop, UserAccount, ItensBag } from "./views";
 
 import { Main } from './layouts';
 
@@ -22,6 +22,12 @@ const routes = [
     path: "/shop",
     layout: Main, 
     view: Shop,
+  },
+  {
+    moduleId: "bag",
+    path: "/bag",
+    layout: Main, 
+    view: ItensBag,
   },
   {
     moduleId: "profile",
